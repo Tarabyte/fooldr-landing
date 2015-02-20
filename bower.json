@@ -1,0 +1,19 @@
+{
+  "name": "fooldr-landing",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Tarabyte/fooldr-landing",
+  "authors": [
+    "tarabyte"
+  ],
+  "description": "Landing site for foodlr.",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
