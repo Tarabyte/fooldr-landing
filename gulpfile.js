@@ -8,8 +8,9 @@ var size = require('gulp-size');
 var jade = require('gulp-jade');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
+var _ = require('lodash');
 
-var result = './dist';
+var result = 'dist';
 var messagesSrc = './src/messages.js';
 var indexSrc = './src/templates/**/*.jade';
 var assetsSrc = './src/assets/**/*';
@@ -77,7 +78,7 @@ gulp.task('index', function() {
  */
 gulp.task('server', function() {
   connect.server({
-    port: 8123,
+    port: 8777,
     livereload: true,
     root: result
   });
@@ -90,9 +91,9 @@ gulp.task('watch', function() {
   gulp.watch(assetsSrc, ['assets']);
   gulp.watch(lessSrc, ['less']);
   gulp.watch([indexSrc, messagesSrc], ['index']);
-  gulp.watch('./dist/**/*', function(){
+  gulp.watch('./dist/**/*', _.debounce(function(){
     gulp.src(result).pipe(connect.reload());
-  });
+  }, 1000));
 });
 
 gulp.task('default', ['assets', 'less', 'index', 'server', 'watch']);
