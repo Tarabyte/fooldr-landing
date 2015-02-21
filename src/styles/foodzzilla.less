@@ -1,3 +1,56 @@
+@import "theme.less";
+
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.content {
+  height: 200px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  > .header {
+    color: @header-color;
+    margin: auto auto;
+    text-align: center;
+    font-size: @header-font-size;
+  }
+}
+
+.sticky-footer {
+  height: @footer-height;
+  margin: 0; //why because it is sticky!
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+body {
+  background-image: url(background_1920x1280.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: @body-bg-color;
+}
+
+footer {
+  background-color: @footer-bg-color;
+}
+
+@media only screen and (max-width: 1365px) {
+  body {
+    background-image: url(background_1366x910.jpg);
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  body {
+    background-image: url(background_1024x682.jpg);
+  }
 }

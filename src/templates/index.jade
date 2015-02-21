@@ -4,9 +4,12 @@ html(lang=lang).no-js
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     title=messages.title
-    link(rel="shortcut icon", href="fav.ico", type="image/x-icon")
+    link(rel="shortcut icon", href="fav.png", type="image/png")
     meta(name="description", content=messages.description)
+    meta(name="yandex", content=messages.yandexKey)
     meta(name="viewport", content="width=device-width, initial-scale=1")
-
+    link(rel="stylesheet", type="text/css", href="foodzzilla.css")
   body
-    p Some text goes heredfds
+  div.content
+    div.header=messages.header
+  footer.sticky-footer

@@ -4,5 +4,7 @@
  */
 module.exports = {
   title: 'Foodzzilla',
-  description: 'Some description'
+  description: 'Some description',
+  yandexKey: 'fdfdf',
+  header: 'Заголовок страницы'
 };
