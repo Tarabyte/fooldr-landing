@@ -6,10 +6,17 @@ html(lang=lang).no-js
     title=messages.title
     link(rel="shortcut icon", href="fav.png", type="image/png")
     meta(name="description", content=messages.description)
-    meta(name="yandex", content=messages.yandexKey)
+    meta(name="keywords", content=messages.keywords)
+    meta(name="yandex-verification", content=messages.yandexKey)
     meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", type="text/css", href="//fonts.googleapis.com/css?family=Roboto&subset=cyrillic")
     link(rel="stylesheet", type="text/css", href="foodzzilla.css")
   body
   div.content
-    div.header=messages.header
-  footer.sticky-footer
+    div.column.left-column
+      div.well.header!=messages.header
+      div.well.description!=messages.description
+    div.column.right-column
+      include ./subscribe.jade
+  footer.sticky
+    img.logo(src="logo_original.png")

@@ -1,0 +1,9 @@
+form.subscribe
+  div.under-constraction=messages.subscribe.workInProgress
+  div.control
+    label(for="email")=messages.subscribe.email
+    input(type="email", id="email", required="")
+  div.button
+    button.send(type="submit")=messages.subscribe.subscribe
+  div.nda=messages.subscribe.NDA
+

@@ -1,33 +1,28 @@
 @import "theme.less";
+@import "subscribe.less";
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   border: none;
+  font-family: @default-font;
 }
 
-.content {
-  height: 200px;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-
-  > .header {
-    color: @header-color;
-    margin: auto auto;
-    text-align: center;
-    font-size: @header-font-size;
-  }
-}
-
-.sticky-footer {
-  height: @footer-height;
+.sticky {
+  height: @sticky-height;
+  background-color: @sticky-bg-color;
   margin: 0; //why because it is sticky!
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  padding: @sticky-padding;
+  text-align: center;
+
+  > .logo {
+    max-width: 33%;
+  }
 }
 
 body {
@@ -39,18 +34,74 @@ body {
   background-color: @body-bg-color;
 }
 
-footer {
-  background-color: @footer-bg-color;
+
+.content {
+  padding-top: @content-top-padding;
+  margin: 0 @content-horizontal-margin;
+  clear: both;
+
+  > .column {
+    width: 50%;
+    float: left;
+  }
+
+  .well {
+    padding: @well-padding;
+    background-color: @well-bg-color;
+    opacity: @well-opacity;
+
+    &+.well {
+      margin-top: @well-gap;
+    }
+  }
+
+  .header {
+    font-size: @header-font-size;
+    color: @header-color;
+    text-transform: uppercase;
+    font-weight: 800;
+
+    >.highlight {
+      color: @highlight-color;
+    }
+  }
+
+  .description {
+    color: @description-color;
+    font-size: @description-font-size;
+  }
+
 }
 
-@media only screen and (max-width: 1365px) {
+
+@media only screen and (max-width: 1366px) {
   body {
     background-image: url(background_1366x910.jpg);
   }
+
+  .content {
+    .header {
+      font-size: @header-font-size*0.75;
+    }
+
+    .description {
+      font-size: @description-font-size*0.75;
+    }
+  }
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1024px) {
   body {
     background-image: url(background_1024x682.jpg);
+  }
+
+  .content {
+    .header {
+      font-size: @header-font-size*0.5;
+    }
+
+    .description {
+      font-size: @description-font-size*0.5;
+    }
   }
 }

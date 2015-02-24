@@ -1,0 +1,54 @@
+.subscribe {
+  margin: 0 @subscribe-horizontal-margin;
+  padding: @subscribe-padding;
+  background-color: @subscribe-bg-color;
+  opacity: @subscribe-opacity;
+  border-radius: @subscribe-border-radius;
+
+  > .under-constraction {
+    font-size: @subscribe-message-font;
+    text-align: center;
+    padding-top: @subscribe-message-padding-top;
+    padding-bottom: @subscribe-message-padding-bottom;
+  }
+
+  > .nda {
+    text-align: center;
+    font-size: @subscribe-nda-font;
+    color: @subscribe-nda-color;
+  }
+
+  > .button {
+    padding: @subscribe-button-vertical-padding 0;
+    > .send {
+      width: 100%;
+      height: @subscribe-send-height;
+      color: @subscribe-send-color;
+      background: linear-gradient(lighten(@subscribe-send-bg-color, 10%), @subscribe-send-bg-color);
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: @subscribe-send-font;
+      border: 1px solid @subscribe-send-border-color;
+      border-radius: @subscribe-send-border-radius;
+    }
+  }
+
+  > .control {
+    padding: @subscribe-control-vertical-padding 0;
+
+    > label {
+      font-size: @subscribe-control-label-font;
+      font-weight: 200;
+
+      &:after {
+        content: ' *';
+        color: @subscribe-control-required-color;
+      }
+    }
+
+    > input {
+      font-size: @subscribe-control-input-font;
+      width: 100%;
+    }
+  }
+}
