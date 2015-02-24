@@ -41,8 +41,15 @@ body {
   clear: both;
 
   > .column {
-    width: 50%;
     float: left;
+
+    &.left-column {
+      width: @content-left-column-width;
+    }
+
+    &.right-column {
+      width: 100% - @content-left-column-width;
+    }
   }
 
   .well {
@@ -80,6 +87,7 @@ body {
   }
 
   .content {
+    margin: 0 @content-horizontal-margin*0.75;
     .header {
       font-size: @header-font-size*0.75;
     }
@@ -96,12 +104,14 @@ body {
   }
 
   .content {
+    margin: 0 @content-horizontal-margin*0.3;
+
     .header {
-      font-size: @header-font-size*0.5;
+      font-size: @header-font-size*0.6;
     }
 
     .description {
-      font-size: @description-font-size*0.5;
+      font-size: @description-font-size*0.6;
     }
   }
 }
