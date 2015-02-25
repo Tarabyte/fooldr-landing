@@ -1,5 +1,5 @@
 doctype html
-html(lang=lang).no-js
+html(lang=messages.lang).no-js
   head
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -12,11 +12,13 @@ html(lang=lang).no-js
     link(rel="stylesheet", type="text/css", href="//fonts.googleapis.com/css?family=Roboto&subset=cyrillic")
     link(rel="stylesheet", type="text/css", href="foodzzilla.css")
   body
-  div.content
-    div.column.left-column
-      div.well.header!=messages.header
-      div.well.description!=messages.description
-    div.column.right-column
-      include ./subscribe.jade
-  footer.sticky
-    img.logo(src="logo_original.png")
+    div.content
+      div.column.left-column
+        div.well.header!=messages.header
+        div.well.description!=messages.description
+      div.column.right-column
+        include ./subscribe.jade
+    footer.sticky
+      img.logo(src="logo_original.png")
+
+    script(src="foodzzilla.js")

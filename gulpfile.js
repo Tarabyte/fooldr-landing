@@ -8,6 +8,8 @@ var size = require('gulp-size');
 var jade = require('gulp-jade');
 var rename = require('gulp-rename');
 var connect = require('gulp-connect');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var _ = require('lodash');
 
 var result = 'dist';
@@ -15,6 +17,7 @@ var messagesSrc = './src/messages.js';
 var indexSrc = './src/templates/**/*.jade';
 var assetsSrc = './src/assets/**/*';
 var lessSrc = './src/styles/**/*';
+var jsSrc = './src/js/**/*.js';
 require('colors');
 
 function wrap(stream) {
@@ -85,15 +88,26 @@ gulp.task('server', function() {
 });
 
 /**
+ * Concat scripts
+ */
+gulp.task('scripts', function() {
+  gulp.src(jsSrc)
+    .pipe(concat('foodzzilla.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(result));
+});
+
+/**
  * Big Brother
  */
 gulp.task('watch', function() {
   gulp.watch(assetsSrc, ['assets']);
   gulp.watch(lessSrc, ['less']);
+  gulp.watch(jsSrc, ['scripts']);
   gulp.watch([indexSrc, messagesSrc], ['index']);
   gulp.watch('./dist/**/*', _.debounce(function(){
     gulp.src(result).pipe(connect.reload());
   }, 1000));
 });
 
-gulp.task('default', ['assets', 'less', 'index', 'server', 'watch']);
+gulp.task('default', ['assets', 'less', 'index', 'scripts', 'server', 'watch']);

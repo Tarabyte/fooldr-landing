@@ -1,9 +1,11 @@
-form.subscribe
-  div.under-constraction=messages.subscribe.workInProgress
-  div.control
+form#subscribe.subscribe(action="api/subscriptions", method="POST")
+  div.interactive.under-constraction=messages.subscribe.workInProgress
+  div.interactive.control
     label(for="email")=messages.subscribe.email
-    input(type="email", id="email", required="")
-  div.button
+    input(type="email", id="email", required="", name="email")
+  div.interactive.button
     button.send(type="submit")=messages.subscribe.subscribe
-  div.nda=messages.subscribe.NDA
+  div.interactive.nda=messages.subscribe.NDA
+  div.done-status.success=messages.subscribe.success
+  div.done-status.error=messages.subscribe.error
 

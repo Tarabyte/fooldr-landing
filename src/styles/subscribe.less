@@ -2,8 +2,38 @@
   margin: 0 @subscribe-horizontal-margin;
   padding: @subscribe-padding;
   background-color: @subscribe-bg-color;
-  opacity: @subscribe-opacity;
+  opacity: 0;
   border-radius: @subscribe-border-radius;
+
+  .js & {
+    animation: fadein-subscribe @animation-duration 2*@animation-step forwards;
+  }
+
+  //hide all interaction elements when done
+  &.done {
+    > .interactive {
+      display: none;
+    }
+
+    &.success > .done-status.success {
+      display: block;
+      background-color: @subscribe-success-bg-color;
+      color: @subscribe-success-color;
+    }
+    &.error > .done-status.error {
+      display: block;
+      background-color: @subscribe-error-bg-color;
+      color: @subscribe-error-color;
+    }
+  }
+
+  > .done-status {
+    display: none;
+    opacity: @subscribe-done-opacity;
+    padding: @subscribe-done-padding;
+    border-radius: @subscribe-border-radius;
+    text-align: center;
+  }
 
   > .under-constraction {
     font-size: @subscribe-message-font;
@@ -49,6 +79,8 @@
     > input {
       font-size: @subscribe-control-input-font;
       width: 100%;
+      box-sizing: border-box;
+      padding: @subscribe-control-input-vertical-padding @subscribe-control-input-horizontal-padding;
     }
   }
 }

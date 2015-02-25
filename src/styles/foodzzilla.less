@@ -1,4 +1,5 @@
 @import "theme.less";
+@import "animations.less";
 @import "subscribe.less";
 
 html, body {
@@ -55,10 +56,12 @@ body {
   .well {
     padding: @well-padding;
     background-color: @well-bg-color;
-    opacity: @well-opacity;
+    opacity: 0;
+    animation: fadein-well @animation-duration forwards;
 
     &+.well {
       margin-top: @well-gap;
+      animation-delay: @animation-step;
     }
   }
 
@@ -66,7 +69,7 @@ body {
     font-size: @header-font-size;
     color: @header-color;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weightx: 800;
 
     >.highlight {
       color: @highlight-color;
