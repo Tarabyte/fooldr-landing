@@ -83,7 +83,16 @@ gulp.task('server', function() {
   connect.server({
     port: 8777,
     livereload: true,
-    root: result
+    root: result,
+    middleware: function() {
+      var url = require('url'),
+          proxy = require('proxy-middleware'),
+          options = url.parse('http://localhost:3000/api');
+
+      options.route = '/api';
+
+      return [proxy(options)];
+    }
   });
 });
 
