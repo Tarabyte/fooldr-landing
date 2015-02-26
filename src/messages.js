@@ -9,6 +9,7 @@ module.exports = {
   description: 'Составь план правильного питания, рассчитай калории, распечатай список продуктов на неделю.',
   yandexKey: '60fe7d455d5bfab0',
   header: 'Правильное питание - <span class="highlight">просто</span>',
+  browserOutdatedMessage: 'Ваш браузер устарел. Более подробную информацию можно получить <a href="https://browser-update.org/ru/update.html">здесь</a>.',
   subscribe: {
     workInProgress: 'Приложение находится в разработке. Укажите электронный адрес и мы оповестим Вас о запуске проекта.',
     subscribe: 'Подписаться',
