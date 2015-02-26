@@ -24,7 +24,7 @@
     request.onreadystatechange = function() {
       if(request.readyState === 4) {
         if(request.status === 200) {
-          form.className += ' done succeess';
+          form.className += ' done success';
         }
         else {
           form.className += ' done error';
